@@ -1,6 +1,6 @@
 var test = require('tape')
 var crypto = require('../')
-var Buffer = require('safe-buffer').Buffer
+
 
 test('get error message', function (t) {
   try {
