@@ -12,7 +12,7 @@ Abstract base class to inherit from if you want to create streams implementing t
 
 ```js
 const HashBase = require('hash-base')
-const inherits = require('inherits')
+const inherits = require('util').inherits
 
 // our hash function is XOR sum of all bytes
 function MyHash () {
