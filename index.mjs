@@ -6,7 +6,7 @@ export * from './lib/create-hmac';
 // exports.createHash = exports.Hash = require('create-hash')
 // exports.createHmac = exports.Hmac = require('create-hmac')
 
-import algos from './lib/browserify-sign/browser/algorithms.json'
+import algos from './lib/browserify-sign/algorithms.json'
 var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(Object.keys(algos));
 
 export function getHashes() {
