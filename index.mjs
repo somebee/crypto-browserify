@@ -1,23 +1,33 @@
-export * from './lib/randombytes';
+import randomBytes from './esm/lib/randombytes';
+// export  from './esm/lib/randombytes';
 // TODO exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('randombytes')
 
-export * from './lib/create-hash';
-export * from './lib/create-hmac';
+export {
+  randomBytes,
+  randomBytes as rng,
+  randomBytes as pseudoRandomBytes,
+  randomBytes as prng
+};
+
+// import {createHash} from  './esm/lib/create-hash';
+// export default {createHash,Hash:createHash};
+export {default as createHash} from './esm/lib/create-hash';
+export {default as createHmac} from './esm/lib/create-hmac';
 // exports.createHash = exports.Hash = require('create-hash')
 // exports.createHmac = exports.Hmac = require('create-hmac')
 
-import algos from './lib/browserify-sign/algorithms.json'
+import algos from './esm/lib/browserify-sign/algorithms.json'
 var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(Object.keys(algos));
 
 export function getHashes() {
   return hashes
 }
 
-export * from './lib/pbkdf2'
+export * from './esm/lib/pbkdf2'
 // exports.pbkdf2 = p.pbkdf2
 // exports.pbkdf2Sync = p.pbkdf2Sync
 
-export * from './lib/browserify-cipher'
+export * from './esm/lib/browserify-cipher'
 /*var aes = require('browserify-cipher')
 exports.Cipher = aes.Cipher
 exports.createCipher = aes.createCipher
@@ -29,7 +39,7 @@ exports.Decipheriv = aes.Decipheriv
 exports.createDecipheriv = aes.createDecipheriv
 exports.getCiphers = aes.getCiphers
 exports.listCiphers = aes.listCiphers*/
-export * from './lib/diffie-hellman'
+export * from './esm/lib/diffie-hellman'
 /* var dh = require('diffie-hellman')
 
 exports.DiffieHellmanGroup = dh.DiffieHellmanGroup
@@ -38,7 +48,7 @@ exports.getDiffieHellman = dh.getDiffieHellman
 exports.createDiffieHellman = dh.createDiffieHellman
 exports.DiffieHellman = dh.DiffieHellman */
 
-export * from './lib/browserify-sign'
+export * from './esm/lib/browserify-sign'
 /* var sign = require('browserify-sign')
 
 exports.createSign = sign.createSign
@@ -46,10 +56,10 @@ exports.Sign = sign.Sign
 exports.createVerify = sign.createVerify
 exports.Verify = sign.Verify */
 
-export * from './lib/create-ecdh'
+export * from './esm/lib/create-ecdh'
 // exports.createECDH = require('create-ecdh')
 
-export * from './lib/public-encrypt'
+export * from './esm/lib/public-encrypt'
 /* var publicEncrypt = require('public-encrypt')
 
 exports.publicEncrypt = publicEncrypt.publicEncrypt
@@ -70,7 +80,7 @@ exports.privateDecrypt = publicEncrypt.privateDecrypt */
 //   }
 // })
 
-export * from './lib/randomfill'
+export * from './esm/lib/randomfill'
 /* var rf = require('randomfill')
 
 exports.randomFill = rf.randomFill
