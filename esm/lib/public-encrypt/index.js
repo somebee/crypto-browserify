@@ -1,10 +1,9 @@
-import publicEncrypt from "./publicEncrypt";
-import privateDecrypt from "./privateDecrypt";
+import publicEncryptInternal from "./publicEncrypt";
+import privateDecryptInternal from "./privateDecrypt";
+
 export function privateEncrypt(key, buf) {
-    return exports.publicEncrypt(key, buf, true);
+    return publicEncryptInternal(key, buf, true);
 }
 export function publicDecrypt(key, buf) {
-    return exports.privateDecrypt(key, buf, true);
+    return privateDecryptInternal(key, buf, true);
 }
-export { publicEncrypt };
-export { privateDecrypt };
